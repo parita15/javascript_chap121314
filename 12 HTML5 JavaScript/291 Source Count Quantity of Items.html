@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>291 Source Count Quantity of Items</title>
+</head>
+<body>
+<div class="asset-container">
+    <div class="asset-container__padding article-view">
+        <div class="w3c-default">
+            <p>&lt;html&gt;</p>
+
+<p>&lt;head&gt;<br>    &lt;title&gt;Complete JavaScript Course&lt;/title&gt;<br>    &lt;style&gt;<br>        .item {<br>            border: 1px solid black;<br>            padding: 2%;<br>            width: 29%;<br>            float: left;<br>            height: 300px;<br>        }<br>        <br>        .img-fluid {<br>            max-width: 100%;<br>        }<br>        <br>        .productItem {<br>            border: 1px solid black;<br>            text-decoration: none;<br>            background-color: green;<br>            color: azure;<br>            border-radius: 10px;<br>            padding: 5px;<br>            font-size: 0.6em;<br>            display: inline-block;<br>        }<br>        <br>        td {<br>            text-align: center;<br>            border: 1px solid #ddd;<br>            padding: 5px;<br>        }<br>        <br>        th {<br>            border: 1px solid #ddd;<br>            text-align: center;<br>            font-size: 1.3em;<br>        }<br>    &lt;/style&gt;<br>&lt;/head&gt;</p>
+
+<p>&lt;body&gt;<br>    &lt;div id="output"&gt;Complete JavaScript Course &lt;/div&gt;<br>    &lt;div id="output2"&gt;Shopping Cart&lt;/div&gt;<br>    &lt;script&gt;<br>        var items = [{<br>            name: 'iPhone'<br>            , details: 'White'<br>            , cost: 500<br>        }, {<br>            name: 'iPad'<br>            , details: 'White'<br>            , cost: 800<br>        }, {<br>            name: 'Cable'<br>            , details: '3 foot'<br>            , cost: 10<br>        }, {<br>            name: 'Camera'<br>            , details: '25MP'<br>            , cost: 300<br>        }, {<br>            name: 'Laptop'<br>            , details: 'Intel i7'<br>            , cost: 1200<br>        }, {<br>            name: 'LCD Monitor'<br>            , details: '24 inch'<br>            , cost: 200<br>        }, {<br>            name: 'TV'<br>            , details: '50 inch'<br>            , cost: 450<br>        }];<br>        var html = '&lt;br&gt;';<br>        var shopcart = [];<br>        window.onload = init;</p>
+
+<p>        function init() {<br>            buildItems();<br>            var q = document.querySelectorAll('.productItem');<br>            for (var x = 0; x &lt; q.length; x++) {<br>                q[x].addEventListener('click', function (e) {<br>                    e.preventDefault();<br>                    addToCart();<br>                })<br>            }<br>            outputCart();<br>        }</p>
+
+<p>        function addToCart() {<br>            var iteminfo = event.target.dataset;<br>            var itemincart = false;<br>            iteminfo.qty = 1;<br>            shopcart.forEach(function (v) {<br>                if (v.id == iteminfo.id) {<br>                    v.qty = parseInt(v.qty) + parseInt(iteminfo.qty);<br>                    itemincart = true;<br>                }<br>            });<br>            if (!itemincart) {<br>                shopcart.push(iteminfo);<br>            }<br>            localStorage.setItem('scart', JSON.stringify(shopcart));<br>            outputCart();<br>        }</p>
+
+<p>        function outputCart() {<br>            if (localStorage.getItem('scart') != null) {<br>                shopcart = JSON.parse(localStorage.getItem('scart'));<br>            }<br>            var html = '&lt;table&gt;&lt;tr&gt;&lt;th&gt;Item&lt;/th&gt;&lt;th&gt;Quantity&lt;/th&gt;&lt;th&gt;cost&lt;/th&gt;&lt;th&gt;id&lt;/th&gt;&lt;th&gt;subtotal&lt;/th&gt;&lt;th&gt;Options&lt;/th&gt;&lt;/tr&gt;';<br>            var total = 0;<br>            shopcart.forEach(function (v) {<br>                var stotal = v.qty * v.price;<br>                total += stotal;<br>                html += '&lt;tr&gt;&lt;td&gt;' + v.name + '(' + v.s + ')&lt;/td&gt;&lt;td&gt;' + v.qty + '&lt;/td&gt;&lt;td&gt;' + v.price + '&lt;/td&gt;&lt;td&gt;' + v.id + '&lt;/td&gt;&lt;td&gt;' + fMoney(stotal) + '&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;';<br>            });<br>            html += '&lt;tr&gt;&lt;td colspan=6&gt;Total ' + fMoney(total) + '&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;';<br>            document.getElementById('output2').innerHTML = html;<br>        }</p>
+
+<p>        function buildItems() {<br>            var x = 0;<br>            items.forEach(function (v) {<br>                html += '&lt;div class="item"&gt;&lt;h3&gt;' + v.name + '&lt;/h3&gt;&lt;img src="http://placehold.it/350x150" class="img-fluid"&gt;&lt;div&gt;' + v.details + ' &lt;br&gt;&lt;a href="#" class="productItem" data-name="' + v.name + '" data-s="' + v.details + '"  data-price="' + v.cost + '" data-id="' + x + '" &gt;Add to Cart&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;';<br>                x++;<br>            })<br>            document.getElementById('output').innerHTML += html;<br>        }</p>
+
+<p>        function fMoney(n) {<br>            return '$' + (n / 100).toFixed(2);<br>        }<br>    &lt;/script&gt;<br>&lt;/body&gt;</p>
+
+<p>&lt;/html&gt;</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

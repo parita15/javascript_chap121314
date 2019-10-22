@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>281 Source LocalStorage Counter</title>
+</head>
+<body>
+<div class="asset-container">
+    <div class="asset-container__padding article-view">
+        <div class="w3c-default">
+            <p>&lt;html&gt;</p>
+
+<p>&lt;head&gt;<br>    &lt;title&gt;Complete JavaScript Course&lt;/title&gt;<br>    &lt;style&gt;<br>        #map {<br>            height: 100%;<br>        }<br>    &lt;/style&gt;<br>&lt;/head&gt;</p>
+
+<p>&lt;body&gt;<br>    &lt;div id="output"&gt;Complete JavaScript Course &lt;/div&gt;<br>    &lt;script&gt;<br>        var message = "hello world";<br>        if (localStorage.getItem('test1')) {<br>            document.getElementById('output').innerHTML = localStorage.getItem('test1');<br>        }<br>        if (localStorage.getItem('count')) {<br>            var cnt = Number(localStorage.getItem('count')) + 1;<br>            localStorage.setItem('count', cnt);<br>            document.getElementById('output').innerHTML += cnt;<br>        }<br>        else {<br>            localStorage.setItem('count', 1);<br>        }<br>    &lt;/script&gt;<br>&lt;/body&gt;</p>
+
+<p>&lt;/html&gt;</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

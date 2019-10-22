@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>296 Source Dynamic Canvas Wording</title>
+</head>
+<body>
+<div class="asset-container">
+    <div class="asset-container__padding article-view">
+        <div class="w3c-default">
+            <p>&lt;html&gt;</p>
+
+<p>&lt;head&gt;<br>    &lt;title&gt;Complete JavaScript Course&lt;/title&gt;<br>    &lt;style&gt;<br>        #canvas1 {<br>            border: 1px solid black;<br>        }<br>    &lt;/style&gt;<br>&lt;/head&gt;</p>
+
+<p>&lt;body&gt;<br>    &lt;div id="output"&gt;Complete JavaScript Course &lt;/div&gt;<br>    &lt;input type="text" id="myWords"&gt;<br>    &lt;input type="button" onclick="draw()" value="Draw"&gt;<br>    &lt;br&gt;<br>    &lt;canvas id="canvas1"&gt;&lt;/canvas&gt;<br>    &lt;script&gt;<br>        var canvas = document.getElementById('canvas1');<br>        var ctx = canvas.getContext('2d');<br>        canvas.width = 400;<br>        canvas.height = 800;<br>        ctx.fillStyle = '#' + (Math.random() * 0xFFFFFF &lt;&lt; 0).toString(16);<br>        ctx.fillRect(10, 30, 100, 100);<br>        ctx.lineWidth = 10;<br>        ctx.strokeStyle = '#' + (Math.random() * 0xFFFFFF &lt;&lt; 0).toString(16);<br>        ctx.strokeRect(10, 150, 100, 100);<br>        ctx.moveTo(10, 270);<br>        ctx.lineTo(110, 370);<br>        ctx.stroke();<br>        ctx.beginPath();<br>        ctx.arc(60, 430, 50, 0, 2 * Math.PI);<br>        ctx.stroke();<br>        ctx.font = "24px Arial";<br>        var y = 540;</p>
+
+<p>        function draw() {<br>            var myWords = document.getElementById('myWords').value;<br>            ctx.fillText(myWords, 10, y);<br>            y = y + 30;<br>        }<br>    &lt;/script&gt;<br>&lt;/body&gt;</p>
+
+<p>&lt;/html&gt;</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

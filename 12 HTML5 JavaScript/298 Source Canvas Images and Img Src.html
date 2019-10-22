@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>298 Source Canvas Images and Img Src</title>
+</head>
+<body>
+<div class="asset-container">
+    <div class="asset-container__padding article-view">
+        <div class="w3c-default">
+            <p>&lt;html&gt;</p>
+
+<p>&lt;head&gt;<br>    &lt;title&gt;Complete JavaScript Course&lt;/title&gt;<br>    &lt;style&gt;<br>        canvas {<br>            border: 1px solid black;<br>        }<br>    &lt;/style&gt;<br>&lt;/head&gt;</p>
+
+<p>&lt;body&gt;<br>    &lt;div id="output"&gt;Complete JavaScript Course &lt;/div&gt;<br>    &lt;canvas id="canvas1"&gt;&lt;/canvas&gt;<br>    &lt;canvas id="canvas2"&gt;&lt;/canvas&gt;<br>    &lt;canvas id="canvas3"&gt;&lt;/canvas&gt; &lt;img id="myImage" src="comp.JPG"&gt;<br>    &lt;script&gt;<br>        var can = document.querySelectorAll('canvas');<br>        for (var x = 0; x &lt; can.length; x++) {<br>            can[x].addEventListener('mouseover', function () {<br>                document.getElementById('myImage').src = event.target.toDataURL();<br>            })<br>        }<br>        window.onload = function () {<br>            var canvas1 = document.getElementById('canvas1');<br>            var ctx1 = canvas1.getContext('2d');<br>            ctx1.fillStyle = 'red';<br>            ctx1.fillRect(5, 5, 150, 100);<br>            var canvas2 = document.getElementById('canvas2');<br>            var ctx2 = canvas2.getContext('2d');<br>            ctx2.beginPath();<br>            ctx2.fillStyle = 'blue';<br>            ctx2.arc(60, 60, 50, 0, 2 * Math.PI);<br>            ctx2.stroke();<br>            ctx2.fill();<br>            var canvas3 = document.getElementById('canvas3');<br>            var ctx3 = canvas3.getContext('2d');<br>            ctx3.fillStyle = 'yellow';<br>            ctx3.arc(60, 60, 70, 0, 2 * Math.PI);<br>            ctx3.stroke();<br>            ctx3.fill();<br>            //var myImage = document.getElementById('myImage');<br>            //ctx3.drawImage(myImage,10,10);<br>            //ctx3.drawImage(canvas1,10,10);<br>            //ctx3.drawImage(canvas2,10,10);       <br>        }<br>    &lt;/script&gt;<br>&lt;/body&gt;</p>
+
+<p>&lt;/html&gt;</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

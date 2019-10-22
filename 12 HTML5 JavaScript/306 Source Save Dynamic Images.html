@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>306 Source Save Dynamic Images</title>
+</head>
+<body>
+<div class="asset-container">
+    <div class="asset-container__padding article-view">
+        <div class="w3c-default">
+            <p>&lt;html&gt;</p>
+
+<p>&lt;head&gt;<br>    &lt;title&gt;Complete JavaScript Course&lt;/title&gt;<br>    &lt;style&gt;<br>        canvas {<br>            border: 1px solid black;<br>        }<br>    &lt;/style&gt;<br>&lt;/head&gt;</p>
+
+<p>&lt;body&gt;<br>    &lt;div id="output"&gt;Complete JavaScript Course &lt;/div&gt;<br>    &lt;canvas id="canvas"&gt;&lt;/canvas&gt;<br>    &lt;input type="color" id="bgColor"&gt;<br>    &lt;input type="button" id="save" value="save"&gt;<br>    &lt;input type="button" id="clear" value="clear"&gt;<br>    &lt;br&gt; &lt;img src="" width="300" height="200" id="holder"&gt;<br>    &lt;script&gt;<br>        var canvas = document.getElementById('canvas');<br>        var ctx = canvas.getContext('2d');<br>        var output = document.getElementById('output');<br>        canvas.width = 700;<br>        canvas.height = 700;<br>        window.onload = init;<br>        var pos = {<br>            x: 0<br>            , y: 0<br>        };<br>        var bgColor = "black";<br>        var bgC = document.getElementById('bgColor');<br>        bgC.addEventListener('change', function () {<br>            bgColor = event.target.value;<br>        })<br>        document.getElementById('save').addEventListener('click', function () {<br>            var dataURL = canvas.toDataURL();<br>            console.log(dataURL);<br>            document.getElementById('holder').src = dataURL;<br>        })<br>        document.getElementById('clear').addEventListener('click', function () {<br>            ctx.clearRect(0, 0, canvas.width, canvas.height);<br>        })</p>
+
+<p>        function init() {<br>            canvas.addEventListener('mousemove', draw);<br>            canvas.addEventListener('mousemove', sPos);<br>            canvas.addEventListener('mouseenter', sPos);<br>        }</p>
+
+<p>        function draw(e) {<br>            if (e.buttons !== 1) return;<br>            output.innerHTML = "X = " + pos.x + " Y = " + pos.y;<br>            ctx.beginPath();<br>            ctx.moveTo(pos.x, pos.y);<br>            sPos(e);<br>            ctx.lineTo(pos.x, pos.y);<br>            ctx.strokeStyle = bgColor;<br>            ctx.lineWidth = 10;<br>            ctx.lineCap = 'round';<br>            ctx.stroke();<br>        }</p>
+
+<p>        function sPos(e) {<br>            console.dir(e);<br>            pos.x = e.pageX;<br>            pos.y = e.pageY;<br>        }<br>    &lt;/script&gt;<br>&lt;/body&gt;</p>
+
+<p>&lt;/html&gt;</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

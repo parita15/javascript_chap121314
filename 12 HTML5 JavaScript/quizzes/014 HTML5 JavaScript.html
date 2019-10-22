@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>014 HTML5 JavaScript</title>
+    </head>
+    <body>
+
+        <div style="background-color:#ffffaa" align = "center">
+            <script>
+                var c = '';
+                var opt = '';
+                var n = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+
+                var quiz = {"count": 3, "next": null, "previous": null, "results": [{"_class": "assessment", "id": 1671948, "assessment_type": "multiple-choice", "created": "2017-09-23T01:31:23Z", "prompt": {"answers": ["<pre class=\"prettyprint linenums\">        var canvas = document.getElementById('canvas');\n        var ctx = canvas.getContext('2d');</pre>", "<pre class=\"prettyprint linenums\">        var canvas = document.getElementById('canvas');\n        var ctx = canvas.getContext('canvas');</pre>", "<pre class=\"prettyprint linenums\">        var canvas = document.getElementById('canvas');\n        var ctx = getContext('canvas');</pre>"], "question": "<p>Which statements below are the correct way to setup prep to draw</p><p><br></p>", "feedbacks": ["", "", ""], "relatedLectureIds": ["8031610"]}, "correct_response": ["a"], "updated": "2017-09-23T01:31:23Z", "section": "", "question_plain": "Which statements below are the correct way to setup prep to draw", "related_lectures": [{"_class": "lecture", "id": 8031610, "title": "Draw on Canvas with Mouse", "created": "2017-09-19T19:56:55Z", "asset": {"_class": "asset", "id": 9643876, "asset_type": "Video", "title": "12 - 16 Draw on Canvas with Mouse.mp4", "created": "2017-09-20T02:49:06Z"}, "object_index": 303, "url": "/javascript-training/learn/v4/t/lecture/8031610"}], "original_assessment_id": 0}, {"_class": "assessment", "id": 1671950, "assessment_type": "multiple-choice", "created": "2017-09-23T01:33:44Z", "prompt": {"feedbacks": ["", "", "", ""], "question": "<p>which statement will get a value of 'test' stored in localstorage</p>", "answers": ["<p><code>test.localStorage.getItem()</code> </p>", "<p><code>localStorage.getItem('test')</code> </p>", "<p><code>localstore.get('test')</code> </p>", "<p><code>localStorage.get('test')</code> </p>"], "relatedLectureIds": ["8031552"]}, "correct_response": ["b"], "updated": "2017-09-23T01:33:44Z", "section": "", "question_plain": "which statement will get a value of 'test' stored in localstorage", "related_lectures": [{"_class": "lecture", "id": 8031552, "title": "LocalStorage Counter", "created": "2017-09-19T19:55:37Z", "asset": {"_class": "asset", "id": 9643900, "asset_type": "Video", "title": "12 - 4 LocalStorage Counter.mp4", "created": "2017-09-20T02:49:06Z"}, "object_index": 280, "url": "/javascript-training/learn/v4/t/lecture/8031552"}], "original_assessment_id": 0}, {"_class": "assessment", "id": 1671952, "assessment_type": "multiple-choice", "created": "2017-09-23T01:37:00Z", "prompt": {"question": "<p>what will output with the below code</p>\n\n<pre class=\"prettyprint linenums\">&lt;canvas id=\"canvas\"&gt;&lt;/canvas&gt;\n&lt;script&gt;\n    var canvas = document.getElementById('canvas');\n    var ctx = canvas.getContext('2d');\n    canvas.height = 600;\n    canvas.width = 500;\n    ctx.beginPath();\n    ctx.fillStyle = \"red\";\n    ctx.arc(50, 50, 50, 0, Math.PI * 2);\n    ctx.fill();\n    ctx.closePath();\n&lt;/script&gt;</pre>\n\n<p><br></p>", "answers": ["<p>nothing the code has errors</p>", "<p>a red square</p>", "<p>a red circle</p>", "<p>half a circle</p>"], "feedbacks": ["", "", "", ""], "relatedLectureIds": ""}, "correct_response": ["c"], "updated": "2017-09-23T01:37:00Z", "section": "", "question_plain": "what will output with the below code\n\n&lt;canvas id=\"canvas\"&gt;&lt;/canvas&gt;\n&lt;script&gt;\n    var canvas = document.getElementById('canvas');\n    var ctx = canvas.getContext('2d');\n    canvas.height = 600;\n    canvas.width = 500;\n    ctx.beginPath();\n    ctx.fillStyle = \"red\";\n    ctx.arc(50, 50, 50, 0, Math.PI * 2);\n    ctx.fill();\n    ctx.closePath();\n&lt;/script&gt;", "related_lectures": [], "original_assessment_id": 0}]};
+
+                for (var i = 0; i < quiz.results.length; i++) {
+
+                    var question = '<font color="ff0000"><br><h3>Question-' + i + ': </h3> <b>' + quiz.results[i].prompt.question + '</b> <br>';
+
+                    for (var j = 0; j < quiz.results[i].prompt.answers.length; j++) {
+
+                        opt = opt.concat(quiz.results[i].prompt.answers[j] ? '<p style="cursor: pointer" onclick="this.style=\'font-weight: bold; color: #CE534D\'">' + n[j] + ': ' + quiz.results[i].prompt.answers[j].toString().replace(/,/g, '<br>') + '</p>' : '<br>');
+                    }
+                    var ans = quiz.results[i].correct_response ? '<p> <br> <input style="cursor: pointer" type="button" onclick="this.value=\'Answer is: ' + quiz.results[i].correct_response.toString() + '\'" value="Show Answer"></input> </p>' : '<br>';
+                    c = c.concat(question, opt, ans);
+                    opt = ''
+                    }
+                document.write(c);
+            </script>
+        </div>
+    </body>
+    </html>

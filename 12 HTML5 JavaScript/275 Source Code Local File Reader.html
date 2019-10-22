@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>275 Source Code Local File Reader</title>
+</head>
+<body>
+<div class="asset-container">
+    <div class="asset-container__padding article-view">
+        <div class="w3c-default">
+            <p>&lt;html&gt;</p>
+
+<p>&lt;head&gt;<br>    &lt;title&gt;Complete JavaScript Course&lt;/title&gt;<br>    &lt;style&gt;</p>
+
+<p>    &lt;/style&gt;<br>&lt;/head&gt;</p>
+
+<p>&lt;body&gt;<br>    &lt;div id="output"&gt;Complete JavaScript Course &lt;/div&gt;<br>    &lt;input type="file" multiple onchange="upFiles(this.files)"&gt;<br>    &lt;div id="message"&gt;&lt;/div&gt;<br>    &lt;script&gt;<br>        var message = document.getElementById('message');<br>        if (window.FileReader) {<br>            message.innerHTML = "file reader is available";<br>        }<br>        else {<br>            message.innerHTML = "file reader NOT available";<br>        }</p>
+
+<p>        function upFiles(files) {<br>            for (var x = 0; x &lt; files.length; x++) {<br>                var fReader = new FileReader();<br>                var fileName = files[x].name;<br>                fReader.onload = function (e) {<br>                    message.innerHTML += '&lt;br&gt;' + fileName;<br>                    message.innerHTML += '&lt;br&gt;' + e.target.result;<br>                }<br>                fReader.readAsText(files[x]);<br>            }<br>        }<br>    &lt;/script&gt;<br>&lt;/body&gt;</p>
+
+<p>&lt;/html&gt;</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

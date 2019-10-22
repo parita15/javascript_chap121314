@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>300 Source Canvas Animation with JavaScript</title>
+</head>
+<body>
+<div class="asset-container">
+    <div class="asset-container__padding article-view">
+        <div class="w3c-default">
+            <p>&lt;html&gt;</p>
+
+<p>&lt;head&gt;<br>    &lt;title&gt;Complete JavaScript Course&lt;/title&gt;<br>    &lt;style&gt;<br>        canvas {<br>            border: 1px solid black;<br>        }<br>    &lt;/style&gt;<br>&lt;/head&gt;</p>
+
+<p>&lt;body&gt;<br>    &lt;div id="output"&gt;Complete JavaScript Course &lt;/div&gt;<br>    &lt;canvas id="canvas"&gt;&lt;/canvas&gt;<br>    &lt;script&gt;<br>        window.onload = init;<br>        var canvas = document.getElementById('canvas');<br>        var ctx = canvas.getContext('2d');<br>        canvas.height = 600;<br>        canvas.width = 500;<br>        var pos = {<br>            x: 0<br>            , y: 50<br>        };</p>
+
+<p>        function init() {<br>            draw();<br>        }</p>
+
+<p>        function draw() {<br>            pos.x = pos.x + 5;<br>            if (pos.x &gt; canvas.width) {<br>                pos.x = 0;<br>            }<br>            if (pos.y &gt; canvas.height) {<br>                pos.y = 0;<br>            }<br>            ctx.clearRect(0, 0, canvas.width, canvas.height);<br>            ctx.beginPath();<br>            ctx.fillStyle = "red";<br>            ctx.arc(pos.x, pos.y, 50, 0, Math.PI * 2);<br>            ctx.fill();<br>            ctx.closePath();<br>            window.setTimeout(draw, 50);<br>        }<br>    &lt;/script&gt;<br>&lt;/body&gt;</p>
+
+<p>&lt;/html&gt;</p><p><br></p><p><br></p><p>&lt;html&gt;</p>
+
+<p>&lt;head&gt;<br>    &lt;title&gt;Complete JavaScript Course&lt;/title&gt;<br>    &lt;style&gt;<br>        canvas {<br>            border: 1px solid black;<br>        }<br>    &lt;/style&gt;<br>&lt;/head&gt;</p>
+
+<p>&lt;body&gt;<br>    &lt;div id="output"&gt;Complete JavaScript Course &lt;/div&gt;<br>    &lt;canvas id="canvas"&gt;&lt;/canvas&gt;<br>    &lt;script&gt;<br>        window.onload = init;<br>        var canvas = document.getElementById('canvas');<br>        var ctx = canvas.getContext('2d');<br>        canvas.height = 600;<br>        canvas.width = 500;<br>        var pos = {<br>            x: 0<br>            , y: 50<br>        };<br>        var pos1 = {<br>            x: 100<br>            , y: 50<br>        };</p>
+
+<p>        function init() {<br>            draw();<br>        }</p>
+
+<p>        function draw() {<br>            pos.x = pos.x + 5;<br>            pos1.y = pos1.y + 5;<br>            if (pos.x &gt; canvas.width) {<br>                pos.x = 0;<br>            }<br>            if (pos1.y &gt; canvas.height) {<br>                pos1.y = 0;<br>            }<br>            ctx.clearRect(0, 0, canvas.width, canvas.height);<br>            ctx.beginPath();<br>            ctx.fillStyle = "red";<br>            ctx.arc(pos.x, pos.y, 50, 0, Math.PI * 2);<br>            ctx.fill();<br>            ctx.closePath();<br>            ctx.beginPath();<br>            ctx.fillStyle = "blue";<br>            ctx.arc(pos1.x, pos1.y, 70, 0, Math.PI * 2);<br>            ctx.fill();<br>            ctx.closePath();<br>            window.setTimeout(draw, 50);<br>        }<br>    &lt;/script&gt;<br>&lt;/body&gt;</p>
+
+<p>&lt;/html&gt;</p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

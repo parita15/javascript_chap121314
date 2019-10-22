@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>302 Source Canvas Image Uploads</title>
+</head>
+<body>
+<div class="asset-container">
+    <div class="asset-container__padding article-view">
+        <div class="w3c-default">
+            <p>&lt;html&gt;</p>
+
+<p>&lt;head&gt;<br>    &lt;title&gt;Complete JavaScript Course&lt;/title&gt;<br>    &lt;style&gt;<br>        canvas {<br>            border: 1px solid black;<br>        }<br>    &lt;/style&gt;<br>&lt;/head&gt;</p>
+
+<p>&lt;body&gt;<br>    &lt;div id="output"&gt;Complete JavaScript Course &lt;/div&gt;<br>    &lt;input type="file" id="imgLoader"&gt;<br>    &lt;br&gt;<br>    &lt;canvas id="canvas"&gt;&lt;/canvas&gt;<br>    &lt;script&gt;<br>        var canvas = document.getElementById('canvas');<br>        var ctx = canvas.getContext('2d');<br>        var imgLoader = document.getElementById('imgLoader');<br>        imgLoader.addEventListener('change', upImage, false);</p>
+
+<p>        function upImage() {<br>            var r = new FileReader();<br>            r.readAsDataURL(event.target.files[0]);<br>            r.onload = function (e) {<br>                var img = new Image();<br>                img.src = event.target.result;<br>                img.onload = function () {<br>                    canvas.width = img.width;<br>                    canvas.height = img.height;<br>                    ctx.drawImage(img, 0, 0);<br>                    ctx.font = "30px Arial";<br>                    ctx.fillText("JavaScript Course", 10, 100);<br>                }<br>                console.log(r);<br>            }<br>        }<br>    &lt;/script&gt;<br>&lt;/body&gt;</p>
+
+<p>&lt;/html&gt;</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
