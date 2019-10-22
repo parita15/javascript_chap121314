@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>376 JavaScript promises</title>
+</head>
+<body>
+<div class="asset-container">
+    <div class="asset-container__padding article-view">
+        <div class="w3c-default">
+            <p>&lt;html&gt;</p>
+
+<p>&lt;head&gt;<br>    &lt;title&gt;Complete JavaScript Course&lt;/title&gt;<br>    &lt;style&gt;</p>
+
+<p>    &lt;/style&gt;<br>&lt;/head&gt;</p>
+
+<p>&lt;body&gt;<br>    &lt;div id="output"&gt;Complete JavaScript Course &lt;/div&gt;<br>    &lt;script&gt;<br>        function getData(url) {<br>            return new Promise(function (response) {<br>                var xhr = new XMLHttpRequest();<br>                xhr.open('GET', url);<br>                xhr.onload = function () {<br>                    if (xhr.status == 200) {<br>                        response(xhr.response);<br>                    }<br>                }<br>                xhr.send();<br>            })<br>        }<br>        getData('https://api.myjson.com/bins/snnh5').then(function (response) {<br>            console.log(response);<br>        })<br>    &lt;/script&gt;<br>&lt;/body&gt;</p>
+
+<p>&lt;/html&gt;</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

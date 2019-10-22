@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>368 Source Maps</title>
+</head>
+<body>
+<div class="asset-container">
+    <div class="asset-container__padding article-view">
+        <div class="w3c-default">
+            <p>&lt;html&gt;</p>
+
+<p>&lt;head&gt;<br>    &lt;title&gt;Complete JavaScript Course&lt;/title&gt;<br>    &lt;style&gt;</p>
+
+<p>    &lt;/style&gt;<br>&lt;/head&gt;</p>
+
+<p>&lt;body&gt;<br>    &lt;div id="output"&gt;Complete JavaScript Course &lt;/div&gt;<br>    &lt;script&gt;<br>        let myArr = [1, 4, 6, 3, 6, 3, 6, 3, 644, 23, 32, 2, 3, 4, 5, 6, 7, 87, 2, 3, 4, 3, 43, 33];<br>        console.log(myArr);</p>
+
+<p>        function removeDup(a) {<br>            return [...new Set(a)];<br>        }<br>        let mapArray = myArr.map(function (a) {<br>            return a *= 10;<br>        })<br>        console.log(mapArray);<br>        let myMap = new Map();<br>        myMap.set("Hello", "World");<br>        myMap.set("myName", "Laurence");<br>        myMap.set("Hello", "World");<br>        myMap.set("myName", "Laurence");<br>        //myMap.delete("Hello");<br>        console.log(myMap);<br>        console.log(myMap.size);<br>        console.log(myMap.has("World"));<br>        console.log(myMap.get("Hello"));<br>        let items = [{<br>            name: 'iPhone'<br>            , details: 'White'<br>            , cost: 50000<br>        }, {<br>            name: 'iPad'<br>            , details: 'White'<br>            , cost: 80000<br>        }, {<br>            name: 'Cable'<br>            , details: '3 foot'<br>            , cost: 1000<br>        }, {<br>            name: 'Camera'<br>            , details: '25MP'<br>            , cost: 30000<br>        }, {<br>            name: 'Laptop'<br>            , details: 'Intel i7'<br>            , cost: 120000<br>        }, {<br>            name: 'LCD Monitor'<br>            , details: '24 inch'<br>            , cost: 20000<br>        }, {<br>            name: 'TV'<br>            , details: '50 inch'<br>            , cost: 45000<br>        }];<br>        console.log(items);<br>        let holderNames = items.map(function (items) {<br>            return items.name;<br>        })<br>        console.log(holderNames);<br>        let holderCosts = items.map(items =&gt; items.cost);<br>        console.log(holderCosts);<br>    &lt;/script&gt;<br>&lt;/body&gt;</p>
+
+<p>&lt;/html&gt;</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

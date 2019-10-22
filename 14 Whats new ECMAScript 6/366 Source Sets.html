@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>366 Source Sets</title>
+</head>
+<body>
+<div class="asset-container">
+    <div class="asset-container__padding article-view">
+        <div class="w3c-default">
+            <p>&lt;html&gt;</p>
+
+<p>&lt;head&gt;<br>    &lt;title&gt;Complete JavaScript Course&lt;/title&gt;<br>    &lt;style&gt;</p>
+
+<p>    &lt;/style&gt;<br>&lt;/head&gt;</p>
+
+<p>&lt;body&gt;<br>    &lt;div id="output"&gt;Complete JavaScript Course &lt;/div&gt;<br>    &lt;script&gt;<br>        let testSet = Object.create(null);<br>        testSet.id = 0;<br>        testSet[10] = "Hello World";<br>        if (testSet.id) {<br>            console.log("its there")<br>        }<br>        else {<br>            console.log("not there")<br>        }<br>        console.log(testSet['10']);<br>        let a = null;<br>        let b = null;<br>        testSet[a] = "whatever";<br>        console.log(testSet[b]);<br>        let testSet2 = new Set();<br>        testSet2.add("hello world");<br>        testSet2.add("hello world 1");<br>        testSet2.add("hello world 2");<br>        testSet2.add("hello world");<br>        //testSet2.delete("hello world");<br>        testSet2.forEach(function (value, key) {<br>            console.log(key + " " + value);<br>        })<br>        let myArr = [1, 4, 6, 3, 6, 3, 6, 3, 644, 23, 32, 2, 3, 4, 5, 6, 7, 87, 2, 3, 4, 3, 43, 33];<br>        console.log(myArr);</p>
+
+<p>        function removeDup(a) {<br>            return [...new Set(a)];<br>        }<br>        console.log(testSet2);<br>        console.log(removeDup(myArr));<br>    &lt;/script&gt;<br>&lt;/body&gt;</p>
+
+<p>&lt;/html&gt;</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
